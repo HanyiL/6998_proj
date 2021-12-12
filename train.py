@@ -37,7 +37,7 @@ def main(args):
                              shuffle=True, num_workers=args.num_workers) 
 
     # Build the models
-    encoder = EncoderCNN(args.embed_size).to(device)
+    encoder = EncoderCNN(args.embed_size,args.CNN_model).to(device)
     decoder = DecoderRNN(args.embed_size, args.hidden_size, len(vocab), args.num_layers).to(device)
     
     # Loss and optimizer
@@ -80,6 +80,7 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--model_path', type=str, default='models/' , help='path for saving trained models')
+    parser.add_argument('--CNN_model', type=str, default='res152' , help='pre-trained CNN in the model')
     parser.add_argument('--crop_size', type=int, default=224 , help='size for randomly cropping images')
     parser.add_argument('--vocab_path', type=str, default='data/vocab.pkl', help='path for vocabulary wrapper')
     parser.add_argument('--image_dir', type=str, default='data/resized2014', help='directory for resized images')

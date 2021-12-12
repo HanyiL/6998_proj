@@ -5,10 +5,19 @@ from torch.nn.utils.rnn import pack_padded_sequence
 
 
 class EncoderCNN(nn.Module):
-    def __init__(self, embed_size):
+    def __init__(self, embed_size, CNNModel):
         """Load the pretrained ResNet-152 and replace top fc layer."""
         super(EncoderCNN, self).__init__()
-        resnet = models.resnet152(pretrained=True)
+        if CNNModel == 'res18':
+            resnet = models.resnet18(pretrained=True)
+        elif CNNModel == 'res34':
+            resnet = models.resnet34(pretrained=True)
+        elif CNNModel == 'res50':
+            resnet = models.resnet50(pretrained=True)
+        elif CNNModel == 'res101':
+            resnet = models.resnet101(pretrained=True)
+        elif CNNModel == 'res152':
+            resnet = models.resnet152(pretrained=True)
         modules = list(resnet.children())[:-1]      # delete the last fc layer.
         self.resnet = nn.Sequential(*modules)
         self.linear = nn.Linear(resnet.fc.in_features, embed_size)
