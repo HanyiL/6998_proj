@@ -29,6 +29,8 @@
    cd ~
    ~ git clone https://github.com/HanyiL/6998_proj.git
    cd 6998_proj
+   6998_proj mkdir data
+   6998_proj wget http://msvocds.blob.core.windows.net/annotations-1-0-3/captions_train-val2014.zip -P ./data/
    6998_proj wget http://images.cocodataset.org/zips/train2014.zip -P ./data/
    6998_proj wget http://images.cocodataset.org/zips/val2014.zip -P ./data/
    6998_proj unzip ./data/captions_train-val2014.zip -d ./data/
