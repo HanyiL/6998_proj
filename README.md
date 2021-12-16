@@ -4,17 +4,18 @@
 Image caption generation refers to using ML model to learn how to produce a single sentence for an image. The model needs to learn the content and semantic of the image and translate them into a sentence. In this project we evlauated the performance of different variations of Resnet and VGG models for this task. The performance is evaluated with BLEU score. The evaluation framework is designed to be generic so that other models can also be plugged in easily to get evaluated.
 
 ### A description of the repository
-data_loader.py: download the coco dataset and do initial process of the data.
-preprocess.py: preprocess vocabulary and images including random corp, horizontal flip, normalize, resize, discard less frequent words, etc.
-model.py: the encoder and decoder model configuration.
-train.py: training controller.
-generateCaption.py: generate sample images and result on test data.
-eval.py: calculate BLEU score.
+- Files:
+- data_loader.py: download the coco dataset and do initial process of the data.
+- preprocess.py: preprocess vocabulary and images including random corp, horizontal flip, normalize, resize, discard less frequent words, etc.
+- model.py: the encoder and decoder model configuration.
+- train.py: training controller.
+- generateCaption.py: generate sample images and result on test data.
+- eval.py: calculate BLEU score.
 
-Folders:
-data: the downloaded coco dataset.
-models_x: saved trained models.
-res_captions: geenrated captions.
+- Folders:
+- data: the downloaded coco dataset.
+- models_x: saved trained models.
+- res_captions: geenrated captions.
 
 ### Prerequisites
 
