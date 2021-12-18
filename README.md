@@ -60,16 +60,16 @@ Folders:
 
    ```shell
    6998_proj python train.py --cnn_arc = 'res152'\ # the pre-trained CNN architecture
-   													--model_path = 'where you want to store the trained model'
+   --model_path = 'where you want to store the trained model'
    ```
 
 4. Then you can input an image to generate captions by the model you have trained
 
    ```shell
    6998_proj python generateCaption.py --cnn_arc='vgg11'\
-                      									--image='coco_test/COCO_val2014_000000000661.jpg'\
-                      									--encoder_path='models_vgg11/encoder-5-3000.ckpt'\
-                      									--decoder_path='models_vgg11/decoder-5-3000.ckpt'
+   --image='coco_test/COCO_val2014_000000000661.jpg'\
+   --encoder_path='models_vgg11/encoder-5-3000.ckpt'\
+   --decoder_path='models_vgg11/decoder-5-3000.ckpt'
    ```
 
 
